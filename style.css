@@ -1,0 +1,192 @@
+:root{
+    --primary-color:#1A1A19;
+    --secondary-color:#31511E;
+    --terceary-color:#859F3D;
+    --cuarty-color:#F6FCDF;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui;
+    color: #444;
+    background-color: var(--primary-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+/* Header */
+header {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    background-color: var(--secondary-color);
+    color: #fff;
+    padding: 0.3rem;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+header nav a {
+    color: #e0e7ff;
+    text-decoration: none;
+    margin-left: 15px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding: 0rem 0.5rem;
+    transition: color 0.3s, background-color 0.3s;
+    border-radius: 8px;
+}
+
+header nav a:hover {
+    background-color: var(--terceary-color);
+    color: var(--primary-color);
+    padding: 0.5rem;
+}
+
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5rem;
+}
+
+/* Main */
+main {
+    width: 90%;
+    max-width: 1200px;
+    margin: 30px auto;
+    border-radius: 12px;
+    padding: 40px;
+    background-color: var(--cuarty-color);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    margin-top: 8rem;
+}
+
+
+/* Contenedor de productos en grid */
+#product-container {
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); 
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+#cart-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Ajuste automático */
+    gap: 1rem; /* Espacio más generoso entre los elementos */
+    justify-content: center;
+    padding: 1rem; /* Espacio dentro del contenedor */
+    transition: all 0.3s ease-in-out; /* Animación suave en actualizaciones */
+}
+
+
+
+/* Ajuste en el diseño de los productos para simetría */
+.product-card, .cart-item {
+    background-color: var(--primary-color);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 240px;
+    text-align: center;
+    padding: 1.25rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 320px; /* Define una altura mínima para uniformidad */
+}
+
+.product-card:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 5px 30px rgba(7, 80, 17, 0.89);
+
+}
+
+.product-card img, .cart-item img {
+    max-width: 100%;
+    height: 150px; 
+    border-radius: 8px;
+    object-fit: cover; /* Asegura que la imagen se ajuste sin distorsión */
+}
+
+.product-card h2, .cart-item h2 {
+    font-size: 1.2rem;
+    color: var(--cuarty-color);
+    margin-top: 12px;
+    min-height: 40px; 
+}
+
+.product-card p, .cart-item p {
+    font-size: 1rem;
+    color: #fff;
+    margin-top: 28px;
+    min-height: 60px; /* Uniforma el espacio para las descripciones */
+}
+
+
+.product-card button{
+    background-color: var(--secondary-color);
+    color: var(--cuarty-color);
+    border: none;
+    padding: 0.7rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.product-card button:hover{
+    background-color: var(--terceary-color);
+    transform: translateY(-2px);
+}
+
+/* Checkout Section */
+.checkout-section {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.checkout-section button {
+    margin-top: 2rem;
+    background-color: var(--secondary-color);
+    color: #ffffff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-right: 1rem;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.checkout-section button:hover {
+    background-color: var(--terceary-color);
+    transform: translateY(-2px);
+}
+
+#total-cost {
+    font-size: 1.3rem;
+    color: #333;
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: 0.5rem;
+    font-weight: bold;
+}
